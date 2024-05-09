@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+/////////////////////////////// Unir Converter/////////
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Unit Converter es una aplicacion que permite al usuario transformar medidas de longitud.
 
-In the project directory, you can run:
 
-### `npm start`
+La funcionalidad de la misma corresponde a de las siguientes directrices de diseño:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+●El usuario debe seleccionar un tipo de conversión en el menú desplegable (un
+elemento <select>) cuyas opciones deben ser: kilómetros a millas, millas a
+kilómetros, pies a metros, metros a pies, centímetros a pulgadas y pulgadas a
+centímetros.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+● El usuario escribe la cantidad de la primera unidad en un campo (un elemento
+<input>)
 
-### `npm test`
+● El resultado debe mostrarse debajo de forma instantánea, es decir, sin que sea
+necesario que haga clic en un botón para realizar la conversión. El resultado debe
+mostrarse con dos decimales, es decir, 62.14 en vez de 62.13712.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+● Cuando el usuario haga clic en el icono de las dos flechas horizontales, el resultado
+debe aparecer como el input original, y el input original mostrarse como resultado.
+Por ejemplo, en el diseño de Figma el input sería 62.12 millas y el resultado sería
+100.00 kilómetros.
 
-### `npm run build`
+● Si el usuario hace clic en el icono del corazón, la conversión se guarda en la lista de
+la parte inferior y desaparece el input del campo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+● Si el usuario hace clic en el icono de la ‘X’ de una conversión guardada, se borra la
+conversión de la lista
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para el desarrollo de la misma se implemento React/Redux, Redux Toolkit, de esta forma para funcionalidad de la app, dividimos al app en dos 'Sclices' -ConversionSlice y -SavedConversioSlice.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-conversionSlice.js
 
-### `npm run eject`
+En este slice encontraras toda la logica referente a la conversion de forma singular, este slice es el encargado de manjear el estado y despachar los reducers en consecuencia que actualizaran cada atributo del estado de conversion. asi mismo gestiona la logica del boton de intercambio de datos. No gestiona el guardado de en localStorage.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-savedConversioSlice.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+en este slice se encontrara toda la logica para el guardado en localStorage, asi como el manejo de las conversiones de forma conjunta, es basicamente el slice que se encargara de despachar los reducers relacionados con el guardado de las conversiones favoritas.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+de esta manera, con estos slices, se administra la la informacion y logica de manera coherente, los componentes reciben esta informacion del estado y la gestionan de acuerdo a lo requerido, asi mismo estos componentes transfieren la informacion pertinente a componentes hijos para su renderizado atraves de props. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

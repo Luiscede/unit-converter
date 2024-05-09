@@ -1,13 +1,292 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*Definnimos algunas variales para el tema de los colores*/
+#root {
+  display: flex;
+  flex-direction: column; /* Apila los elementos uno encima del otro */
+  align-items: center; /* Centra horizontalmente */
+  width: 100%; /* Utiliza toda la altura de la ventana del navegador */
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+}
+#root .app {
+  text-align: center;
+  width: 100%;
+}
+#root .app .body {
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*/-------------------------------------------------------------///Estilos de la NAV BAR*/
+.nav {
+  color: #2E0039;
+  display: flex;
+  border-bottom: 2px solid rgba(61, 58, 58, 0.6901960784);
+  box-shadow: 0px 0px 0px rgba(21, 20, 20, 0.412);
+  justify-content: center;
+  width: 100%;
 }
+.nav i {
+  margin-top: 25px;
+}
+.nav h1 {
+  margin-left: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/*/-------------------------------------------------------------///Estilos del body*/
+.body {
+  justify-content: center;
+  height: 100%; /* Utiliza toda la altura de la ventana del navegador */
+  width: 100vh;
+  padding-top: 50px;
+  /********************************STILOS DEL AREA DE GUARDADO---------------*/
+}
+.body .conversionCard {
+  width: 450px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #2E0039;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 21px;
+  opacity: 0px;
+  padding: 25px 30px 10px 25px;
+  /******************************************************************stilo de saved button y Result*****/
+}
+.body .conversionCard .conversionCardHeader {
+  text-align: left;
+}
+.body .conversionCard .conversionCardInput {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 0px;
+}
+.body .conversionCard .conversionCardInput Input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #ffffff;
+  text-align: right;
+  padding: 0px;
+}
+.body .conversionCard .conversionCardInput .conversionCardSelect {
+  color: #ffffff;
+  display: flex;
+}
+.body .conversionCard .conversionCardInput .conversionCardSelect .conversionSelect {
+  color: #ffffff;
+  background-color: transparent;
+  text-align: left;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 14px;
+}
+.body .conversionCard .conversionCardInput .conversionCardSelect .conversionSelect:focus {
+  background: transparent;
+  outline: none;
+}
+.body .conversionCard .conversionCardInput .conversionCardSelect .conversionSelect option {
+  background-color: #2E0039;
+  color: #ffffff;
+}
+.body .conversionCard .conversionCardInput .conversionCardSelect button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 0px;
+  padding-left: 30px;
+  font-size: 17px;
+}
+.body .conversionCard .conversionCardInput .userInput {
+  display: flex;
+}
+.body .conversionCard .conversionCardInput .userInput span {
+  margin-left: 10px;
+}
+.body .conversionCard .conversionCardResult {
+  display: flex;
+  justify-content: space-between;
+}
+.body .conversionCard .conversionCardResult button {
+  color: #ffffff;
+  border: none;
+  background: none;
+  font-size: 35px;
+  cursor: pointer;
+}
+.body .conversionCard .conversionCardResult button:hover {
+  background-color: #aaa;
+}
+.body .savedConversionContainer {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+.body .savedConversionContainer .savedHeader {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #676767;
+}
+.body .savedConversionContainer .savedConversionCard {
+  margin-bottom: 20px;
+  height: 40px;
+  gap: 0px;
+  border-radius: 10px;
+  opacity: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #E3E3E3;
+  flex-basis: calc(50% - 2px);
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.body .savedConversionContainer .savedConversionCard > div {
+  flex-grow: 1;
+}
+.body .savedConversionContainer .savedConversionCard button {
+  width: 30px;
+}
+.body .savedConversionContainer .savedConversionCard .buttonDelete {
+  background: none;
+  border: none;
+  color: #676767;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.body .savedConversionUserBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2E0039;
+  color: #ffffff;
+  padding: 0%;
+  width: 100%;
+  margin: 0%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+}
+.footer p {
+  margin: 20px;
+}
+
+/**----------------------------------------------- MEDIA QUERIES------------*/
+@media screen and (max-width: 928px) {
+  .savedConversionContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .savedConversionContainer .savedConversionCard {
+    align-self: center;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #root {
+    width: 100%;
+  }
+  #root .app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #root .app .nav {
+    width: 100%;
+    text-align: left;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /** /// estilos para la parte de guardados//////*/
+  }
+  .body .conversionCard {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0%;
+    align-items: center;
+  }
+  .body .conversionCard .conversionCardHeader {
+    text-align: left;
+    width: 100%;
+  }
+  .body .conversionCard .conversionCardInput {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+  .body .conversionCard .conversionCardInput .conversionCardSelect .tongleButton {
+    padding-left: 5%;
+  }
+  .body .conversionCard .conversionCardInput .conversionCardSelect .selectContainer .conversionSelect {
+    width: 100%;
+    text-align: left;
+  }
+  .body .conversionCard .conversionCardInput .userInput {
+    justify-content: space-between;
+    padding: 0%;
+    padding-top: 20px;
+  }
+  .body .conversionCard .conversionCardInput .userInput input {
+    width: 100%;
+  }
+  .body .conversionCard .conversionCardResult {
+    width: 100%;
+  }
+  .body .conversionCard .conversionCardResult i {
+    font-size: 20px;
+  }
+  .body .savedConversionContainer {
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+  }
+  .body .savedConversionContainer .savedHeader h2 {
+    font-size: 17px;
+    text-align: left;
+  }
+  .body .savedConversionContainer .savedConversionCard {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 300px;
+  }
+}/*# sourceMappingURL=index.css.map */
