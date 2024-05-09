@@ -2,9 +2,9 @@
 /*Definnimos algunas variales para el tema de los colores*/
 #root {
   display: flex;
-  flex-direction: column; /* Apila los elementos uno encima del otro */
-  align-items: center; /* Centra horizontalmente */
-  width: 100%; /* Utiliza toda la altura de la ventana del navegador */
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
   font-family: "Poppins", sans-serif;
   height: 100%;
 }
@@ -41,7 +41,7 @@
 /*/-------------------------------------------------------------///Estilos del body*/
 .body {
   justify-content: center;
-  height: 100%; /* Utiliza toda la altura de la ventana del navegador */
+  height: 100%; 
   width: 100vh;
   padding-top: 50px;
   /********************************STILOS DEL AREA DE GUARDADO---------------*/
