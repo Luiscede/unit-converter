@@ -42,3 +42,4 @@ en este slice se encontrara toda la logica para el guardado en localStorage, asi
 de esta manera, con estos slices, se administra la la informacion y logica de manera coherente, los componentes reciben esta informacion del estado y la gestionan de acuerdo a lo requerido, asi mismo estos componentes transfieren la informacion pertinente a componentes hijos para su renderizado atraves de props. 
 
 
+(ver uml)
